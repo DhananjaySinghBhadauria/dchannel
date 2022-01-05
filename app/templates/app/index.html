@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- this is test comment -->
+<body>
+    <h3>Django Channels Test...</h3>
+
+    <script>
+        var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+        ws.onopen = function(){
+            console.log('Websocket Connection Opened')
+            ws.send('this is message from client!')
+        }
+        ws.onmessage = function(event){
+            console.log('on message funcion triggered', event)
+        }
+    </script>
+</body>
+</html>
